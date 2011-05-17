@@ -1,3 +1,2 @@
-require File.join(File.dirname(__FILE__), '..', 'lib', 'hide_attributes.rb')
+require 'hide_attributes'
 
-ActiveRecord::Base.send :include, HideAttributes

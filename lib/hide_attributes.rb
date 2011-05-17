@@ -34,3 +34,7 @@ module HideAttributes #:nodoc:
     send(formatter, {:except => self.class.hidden_attributes}.merge(opts), block)
   end
 end
+
+
+ActiveRecord::Base.send :include, HideAttributes
+
