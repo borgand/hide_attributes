@@ -43,4 +43,8 @@ Runtime requirements are:
 
 * ActiveRecord >=3.0
 
+== TODO
+
+* Write tests
+
 Copyright (c) 2011 Laas Toom, released under the MIT license
