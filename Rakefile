@@ -30,7 +30,6 @@ begin
     gemspec.description = "Autohides sensitive attributes (such as passwords) when rendering XML or JSON from ActiveRecord model"
     gemspec.email = "laas.toom@gmail.com"
     gemspec.homepage = "http://github.com/borgand/hide_attributes"
-    gemspec.description = "TODO"
     gemspec.authors = ["Laas Toom"]
   end
 rescue LoadError
