@@ -12,7 +12,7 @@ module HideAttributes #:nodoc:
 
   # Merge +to_xml+ options with +:exclude => hidden_attributes+
   def to_xml_with_hidden(opts=nil, &block)
-    merge_options_and_call(:to_xml_without_hidden, opts, block)
+    merge_options_and_call(:to_xml_without_hidden, opts, &block)
   end
 
   # Merge +as_json+ with +:exclude => hidden_attributes+
@@ -31,7 +31,7 @@ module HideAttributes #:nodoc:
   # Merge options with +:exclude => hidden_attributes+ and call indicated formatter
   def merge_options_and_call(formatter, opts=nil, &block)
     opts ||= {}
-    send(formatter, {:except => self.class.hidden_attributes}.merge(opts), block)
+    send(formatter, {:except => self.class.hidden_attributes}.merge(opts), &block)
   end
 end
 
