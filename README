@@ -1,26 +1,46 @@
-HideAttributes
-==============
+= HideAttributes
 
 This plugin generates wrappers to `to_xml` and `to_json` methods to
 automatically exclude attributes such as passwords from output.
 
 
-Example
-=======
+== Example
 
-class User < ActiveRecord::Base
+To auto-hide password fields from generated JSON output, add this to your model:
 
-  hide_attributes :password, :password_salt
+  class User < ActiveRecord::Base
 
-end
+    hide_attributes :password, :password_salt
 
-user = User.first
+  end
 
-# Output user's JSON without hidden attributes present
-user.to_json
 
-# Temporarly verride hiding and output all attributes
-user.to_json :except => nil
+Then use as usual:
 
+  user = User.first
+
+  # Output user's JSON without hidden attributes present
+  user.to_json
+
+  # Temporarly override hiding and output all attributes
+  user.to_json :except => nil
+
+
+== INSTALL
+
+To install simply add it to your _Gemfile_
+
+  gem 'hide_attributes'
+
+And run bundle:
+
+  bundle install
+
+
+== Requirements
+
+Runtime requirements are:
+
+* ActiveRecord >=3.0
 
 Copyright (c) 2011 Laas Toom, released under the MIT license
