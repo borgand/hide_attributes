@@ -21,3 +21,19 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "hide_attributes"
+    gemspec.summary = "ActiveRecord to JSON or XML without sensitive data"
+    gemspec.description = "Autohides sensitive attributes (such as passwords) when rendering XML or JSON from ActiveRecord model"
+    gemspec.email = "laas.toom@gmail.com"
+    gemspec.homepage = "http://github.com/borgand/hide_attributes"
+    gemspec.description = "TODO"
+    gemspec.authors = ["Laas Toom"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
+
